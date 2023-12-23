@@ -13,8 +13,17 @@ import { SharedLayOut } from '../components/SharedLayout/SharedLayOut';
 // import css from '../components/ContactForm/ContactForm.module.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { refreshCurrentUser } from '../redux/auth/auth-operations';
 
 export const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshCurrentUser());
+  }, [dispatch]);
+
   return (
     <>
       <div>

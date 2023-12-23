@@ -1,8 +1,9 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import { AppBar } from '../AppBar';
 export const SharedLayOut = () => {
   return (
     <>
-      <nav>
+      {/* <nav>
         <ul>
           <li>
             <NavLink to="/register">Registration</NavLink>
@@ -14,7 +15,8 @@ export const SharedLayOut = () => {
             <NavLink to="/contacts">Contacts</NavLink>
           </li>
         </ul>
-      </nav>
+      </nav> */}
+      <AppBar />
       <Outlet />
     </>
   );

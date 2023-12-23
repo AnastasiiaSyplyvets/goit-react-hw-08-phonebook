@@ -13,3 +13,6 @@ export const selectVisibleContacts = createSelector(
     );
   }
 );
+
+export const selectIsLoggedIn = state => state.auth.isLoggedIn;
+export const selectAuthName = state => state.auth.user.name;

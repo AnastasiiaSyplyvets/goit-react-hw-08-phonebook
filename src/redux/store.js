@@ -3,11 +3,11 @@ import { combineReducers } from '@reduxjs/toolkit';
 
 import { contactsReducer } from './contactSlice';
 import { filterReducer } from './filterSlice';
-// import authReducer from '../redux/auth/auth-slice';
+import authReducer from '../redux/auth/auth-slice';
 
 import {
   persistStore,
-  // persistReducer,
+  persistReducer,
   FLUSH,
   REHYDRATE,
   PAUSE,
@@ -15,18 +15,17 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-// import storage from 'redux-persist/lib/storage';
+import storage from 'redux-persist/lib/storage';
 
-// const authPersistConfig = {
-//   key: 'auth',
-//   storage,
-//   whitelist: ['token'],
-// };
-
-// const persistedReducer = persistReducer(authPersistConfig, rootReducer);
+const authPersistConfig = {
+  key: 'auth',
+  storage,
+  whitelist: ['token'],
+};
 
 const rootReducer = combineReducers({
-  // auth: persistReducer(authPersistConfig, authReducer),
+  auth: persistReducer(authPersistConfig, authReducer),
+  // auth: authReducer,
   contacts: contactsReducer,
   filter: filterReducer,
 });
@@ -40,5 +39,5 @@ export const store = configureStore({
       },
     }),
 });
-
+// const persistedReducer = persistReducer(authPersistConfig, rootReducer);
 export const persistor = persistStore(store);

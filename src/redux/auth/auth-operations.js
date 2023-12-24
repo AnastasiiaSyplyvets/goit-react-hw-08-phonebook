@@ -46,7 +46,7 @@ export const refreshCurrentUser = createAsyncThunk(
   async (_, thunkAPI) => {
     const state = thunkAPI.getState();
     const persistedToken = state.auth.token;
-    if (persistedToken === null) {
+    if (persistedToken === '') {
       console.log('tokena net');
       return thunkAPI.rejectWithValue(5);
     }

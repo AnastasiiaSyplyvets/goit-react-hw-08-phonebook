@@ -8,7 +8,7 @@ import {
 
 const initialState = {
   user: { name: null, email: null },
-  token: null,
+  token: '',
   isLoggedIn: false,
 };
 
@@ -29,7 +29,7 @@ const authSlice = createSlice({
       })
       .addCase(logOut.fulfilled, state => {
         state.user = { name: null, email: null };
-        state.token = null;
+        state.token = '';
         state.isLoggedIn = false;
       })
       .addCase(refreshCurrentUser.fulfilled, (state, action) => {

@@ -16,6 +16,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { refreshCurrentUser } from '../redux/auth/auth-operations';
+import { PrivateRoute } from '../components/UserMenue/PrivateRoute';
+import { RestrictedRoute } from '../components/UserMenue/RestrictedRoute';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -29,9 +31,36 @@ export const App = () => {
       <div>
         <Routes>
           <Route path="/" element={<SharedLayOut />}>
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/contacts" element={<ContactsPage />} />
+            <Route
+              path="/register"
+              element={
+                <RestrictedRoute
+                  redirectTo="/contacts"
+                  component={<Register />}
+                />
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                <RestrictedRoute
+                  redirectTo="/contacts"
+                  component={<LoginPage />}
+                />
+              }
+            />
+            <Route
+              path="/contacts"
+              element={
+                <PrivateRoute
+                  redirectTo="/login"
+                  component={<ContactsPage />}
+                />
+              }
+            />
+            {/* <PrivateRoute path="/contacts">
+              <ContactsPage />
+            </PrivateRoute> */}
           </Route>
         </Routes>
       </div>

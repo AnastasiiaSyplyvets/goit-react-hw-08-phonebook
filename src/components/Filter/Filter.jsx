@@ -5,6 +5,9 @@ import { changeFilterAction } from '../../redux/filterSlice';
 
 import css from './Filter.module.css';
 
+import { Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
+import { Search2Icon } from '@chakra-ui/icons';
+
 export const Filter = () => {
   const dispatch = useDispatch();
 
@@ -14,12 +17,19 @@ export const Filter = () => {
 
   return (
     <label className={css.findOption}>
-      Find contacts by name
-      <input
-        className={css.filterInput}
-        type="text"
-        onChange={changeFilter}
-      ></input>
+      <p>Find contacts by name</p>
+      <InputGroup>
+        <InputLeftElement pointerEvents="none">
+          <Search2Icon color="#BAF0BC"></Search2Icon>
+        </InputLeftElement>
+        <Input
+          size="sm"
+          width="30%"
+          className={css.filterInput}
+          type="text"
+          onChange={changeFilter}
+        ></Input>
+      </InputGroup>
     </label>
   );
 };

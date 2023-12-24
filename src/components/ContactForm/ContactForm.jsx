@@ -10,6 +10,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import css from './ContactForm.module.css';
 
+import { Input, InputGroup, InputLeftElement, Button } from '@chakra-ui/react';
+import { PhoneIcon, ArrowRightIcon } from '@chakra-ui/icons';
 const Form = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
@@ -80,33 +82,49 @@ const Form = () => {
   };
 
   return (
-    <form onSubmit={handleFormSubmit}>
+    <form className={css.formData} onSubmit={handleFormSubmit}>
       <label className={css.labelName} htmlFor="">
         Name
-        <input
-          className={css.input}
-          type="text"
-          value={name}
-          onChange={handleInputChange}
-          name="name"
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-          required
-        />
+        <InputGroup>
+          <InputLeftElement pointerEvents="none">
+            <ArrowRightIcon color="#BAF0BC"></ArrowRightIcon>
+          </InputLeftElement>
+          <Input
+            type="text"
+            value={name}
+            onChange={handleInputChange}
+            className={css.input}
+            width="200px"
+            name="name"
+            title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+            required
+          />
+        </InputGroup>
       </label>
       <label className={css.labelName} htmlFor="">
         Number
-        <input
-          className={css.input}
-          type="tel"
-          value={number}
-          name="number"
-          onChange={handleInputChange}
-        ></input>
+        <InputGroup>
+          <InputLeftElement pointerEvents="none">
+            <PhoneIcon color="#BAF0BC"></PhoneIcon>
+          </InputLeftElement>
+          <Input
+            className={css.input}
+            width="200px"
+            type="tel"
+            value={number}
+            name="number"
+            onChange={handleInputChange}
+          ></Input>
+        </InputGroup>
       </label>
-      <button className={css.addBtn} type="submit">
+      <Button
+        className={css.addBtn}
+        colorScheme="rgb(24, 108, 24)"
+        variant="solid"
+        type="submit"
+      >
         Add contact
-      </button>
+      </Button>
     </form>
   );
 };

@@ -18,6 +18,7 @@ import { useEffect } from 'react';
 import { refreshCurrentUser } from '../redux/auth/auth-operations';
 import { PrivateRoute } from '../components/UserMenue/PrivateRoute';
 import { RestrictedRoute } from '../components/UserMenue/RestrictedRoute';
+import { ChakraProvider } from '@chakra-ui/react';
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -28,43 +29,45 @@ export const App = () => {
 
   return (
     <>
-      <div>
-        <Routes>
-          <Route path="/" element={<SharedLayOut />}>
-            <Route
-              path="/register"
-              element={
-                <RestrictedRoute
-                  redirectTo="/contacts"
-                  component={<Register />}
-                />
-              }
-            />
-            <Route
-              path="/login"
-              element={
-                <RestrictedRoute
-                  redirectTo="/contacts"
-                  component={<LoginPage />}
-                />
-              }
-            />
-            <Route
-              path="/contacts"
-              element={
-                <PrivateRoute
-                  redirectTo="/login"
-                  component={<ContactsPage />}
-                />
-              }
-            />
-            {/* <PrivateRoute path="/contacts">
+      <ChakraProvider>
+        <div>
+          <Routes>
+            <Route path="/" element={<SharedLayOut />}>
+              <Route
+                path="/register"
+                element={
+                  <RestrictedRoute
+                    redirectTo="/contacts"
+                    component={<Register />}
+                  />
+                }
+              />
+              <Route
+                path="/login"
+                element={
+                  <RestrictedRoute
+                    redirectTo="/contacts"
+                    component={<LoginPage />}
+                  />
+                }
+              />
+              <Route
+                path="/contacts"
+                element={
+                  <PrivateRoute
+                    redirectTo="/login"
+                    component={<ContactsPage />}
+                  />
+                }
+              />
+              {/* <PrivateRoute path="/contacts">
               <ContactsPage />
             </PrivateRoute> */}
-          </Route>
-        </Routes>
-      </div>
-      <ToastContainer />
+            </Route>
+          </Routes>
+        </div>
+        <ToastContainer />
+      </ChakraProvider>
     </>
   );
 };

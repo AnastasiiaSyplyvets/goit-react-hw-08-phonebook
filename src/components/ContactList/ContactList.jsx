@@ -8,6 +8,9 @@ import * as contactOperations from '../../redux/operations';
 
 import css from './ContactList.module.css';
 
+import { Button } from '@chakra-ui/react';
+import { DeleteIcon } from '@chakra-ui/icons';
+
 export const Contact = () => {
   const contactsRedux = useSelector(selectContacts);
   const contacts = useSelector(selectVisibleContacts);
@@ -33,7 +36,10 @@ export const Contact = () => {
             <p className={css.contactText}>
               {contact.name} : {contact.number}
             </p>
-            <button
+            <Button
+              leftIcon={<DeleteIcon />}
+              colorScheme="rgb(24, 108, 24)"
+              variant="solid"
               className={css.deleteBtn}
               type="button"
               onClick={() => {
@@ -41,7 +47,7 @@ export const Contact = () => {
               }}
             >
               Delete
-            </button>
+            </Button>
           </li>
         );
       })}

@@ -2,13 +2,15 @@
   font-size: 16px;
   font-weight: 700;
 
-  color: rgb(0, 51, 0);
+  color: green;
+  margin-bottom: 20px;
 }
 
 .input {
   border-radius: 10px;
-  margin-left: 20px;
+  /* margin-left: 20px; */
   margin-right: 20px;
+  margin-bottom: 20px;
   border-color: rgb(0, 51, 0);
 }
 
@@ -19,12 +21,14 @@
   border-radius: 10px;
   border-color: rgb(0, 102, 0);
   color: rgb(20, 82, 20);
-  background-color: rgb(153, 230, 153);
+  background-color: rgb(24, 108, 24);
 
   font-size: 16px;
   font-weight: 500;
 
   cursor: pointer;
+  /* margin-bottom: 30px; */
+  margin-top: 25px;
 }
 
 .mainTitle {
@@ -39,4 +43,8 @@
 
 .listCover {
   width: 400px;
+}
+
+.formData {
+  display: flex;
 }

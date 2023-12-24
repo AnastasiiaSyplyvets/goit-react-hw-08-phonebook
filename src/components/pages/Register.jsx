@@ -2,6 +2,11 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { register } from '../../redux/auth/auth-operations';
 
+import { EmailIcon, ArrowRightIcon, ArrowLeftIcon } from '@chakra-ui/icons';
+import { Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
+import { Button } from '@chakra-ui/react';
+import css from './LoginPage.module.css';
+
 export const Register = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -43,23 +48,59 @@ export const Register = () => {
     <div>
       <h1>Registration form</h1>
       <form onSubmit={handleFormSubmit}>
-        <label>
-          <p>Name</p>
-          <input value={name} name="name" onChange={handleInputChange}></input>
-          <p>Email </p>
-          <input
-            value={email}
-            name="email"
-            onChange={handleInputChange}
-          ></input>
-          <p>Password</p>
-          <input
-            value={password}
-            name="password"
-            onChange={handleInputChange}
-          ></input>
+        <label className={css.label}>
+          Name
+          <InputGroup>
+            <InputLeftElement pointerEvents="none">
+              <ArrowLeftIcon color="#BAF0BC"></ArrowLeftIcon>
+            </InputLeftElement>
+            <Input
+              className={css.input}
+              size="sm"
+              variant="outline"
+              value={name}
+              name="name"
+              onChange={handleInputChange}
+            ></Input>
+          </InputGroup>
         </label>
-        <button type="submit">Register</button>
+
+        <label className={css.label}>
+          Email
+          <InputGroup>
+            <InputLeftElement pointerEvents="none">
+              <EmailIcon color="#BAF0BC"></EmailIcon>
+            </InputLeftElement>
+            <Input
+              className={css.input}
+              size="sm"
+              variant="outline"
+              value={email}
+              name="email"
+              onChange={handleInputChange}
+            ></Input>
+          </InputGroup>
+        </label>
+
+        <label className={css.label}>
+          Password
+          <InputGroup>
+            <InputLeftElement pointerEvents="none">
+              <ArrowRightIcon color="#BAF0BC"></ArrowRightIcon>
+            </InputLeftElement>
+            <Input
+              className={css.input}
+              size="sm"
+              variant="outline"
+              value={password}
+              name="password"
+              onChange={handleInputChange}
+            ></Input>
+          </InputGroup>
+        </label>
+        <Button colorScheme="green" size="md" variant="solid" type="submit">
+          Register
+        </Button>
       </form>
     </div>
   );

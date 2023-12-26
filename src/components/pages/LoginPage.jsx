@@ -49,6 +49,7 @@ export const LoginPage = () => {
             </InputLeftElement>
 
             <Input
+              width="50%"
               size="sm"
               variant="outline"
               onChange={handleInputChange}
@@ -63,6 +64,7 @@ export const LoginPage = () => {
             </InputLeftElement>
 
             <Input
+              width="50%"
               size="sm"
               variant="outline"
               onChange={handleInputChange}

@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
+
+import css from '../Navigation/navigation.module.css';
 import styled from 'styled-components';
-import css from '../components/Navigation/navigation.module.css';
 
 const StyledLink = styled(NavLink)`
   color: black;
@@ -12,19 +13,17 @@ const StyledLink = styled(NavLink)`
   }
 `;
 
-const AuthNav = () => {
+export const Navigation = () => {
   return (
-    <div>
+    <>
       <ul className={css.menueList}>
         <li className={css.listItem}>
-          <StyledLink to="/register">Registration</StyledLink>
+          <StyledLink to="/">Home</StyledLink>
         </li>
         <li className={css.listItem}>
-          <StyledLink to="/login">Login</StyledLink>
+          <StyledLink to="/contacts">Contacts</StyledLink>
         </li>
       </ul>
-    </div>
+    </>
   );
 };
-
-export default AuthNav;

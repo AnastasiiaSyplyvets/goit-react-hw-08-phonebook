@@ -1,0 +1,18 @@
+.manue {
+  display: flex;
+  justify-items: space-between;
+}
+
+.userText {
+  margin-left: 50px;
+  margin-right: 50px;
+  font-weight: 500;
+
+  display: flex;
+}
+
+.userName {
+  color: #49712c;
+  font-weight: 700;
+  margin-left: 30px;
+}

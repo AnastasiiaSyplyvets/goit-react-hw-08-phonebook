@@ -1,0 +1,10 @@
+.menueList {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.listItem {
+  margin-left: 50px;
+  font-weight: 700;
+}

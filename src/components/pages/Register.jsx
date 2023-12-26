@@ -57,6 +57,7 @@ export const Register = () => {
             <Input
               className={css.input}
               size="sm"
+              width="50%"
               variant="outline"
               value={name}
               name="name"
@@ -74,6 +75,7 @@ export const Register = () => {
             <Input
               className={css.input}
               size="sm"
+              width="50%"
               variant="outline"
               value={email}
               name="email"
@@ -91,6 +93,7 @@ export const Register = () => {
             <Input
               className={css.input}
               size="sm"
+              width="50%"
               variant="outline"
               value={password}
               name="password"

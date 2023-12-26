@@ -1,6 +1,6 @@
 import AuthNav from './Auth-Nav';
 import { UserMenue } from './UserMenue/UserMenue';
-import { Navigation } from '../components/Navigation';
+import { Navigation } from '../components/Navigation/Navigation';
 
 import { selectIsLoggedIn } from '../redux/selectors';
 import { useSelector } from 'react-redux';

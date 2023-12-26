@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { addNewContact } from '../../redux/operations'; //new
+import { addNewContact } from '../../redux/contacts/operations'; //new
 
 import { selectContacts } from '../../redux/selectors';
 

@@ -1,16 +1,11 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-// import Form from './ContactForm/ContactForm';
-// import { Filter } from './Filter/Filter';
-// import { Contact } from './ContactList/ContactList';
-
 import { Register } from '../../src/components/pages/Register';
 import { LoginPage } from '../components/pages/LoginPage';
 import { ContactsPage } from '../../src/components/pages/ContactsPage';
 import { SharedLayOut } from '../components/SharedLayout/SharedLayOut';
 
-// import css from '../components/ContactForm/ContactForm.module.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useDispatch } from 'react-redux';
@@ -60,9 +55,6 @@ export const App = () => {
                   />
                 }
               />
-              {/* <PrivateRoute path="/contacts">
-              <ContactsPage />
-            </PrivateRoute> */}
             </Route>
           </Routes>
         </div>
